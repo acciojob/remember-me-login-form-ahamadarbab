@@ -3,7 +3,7 @@ const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
 const checkbox = document.getElementById("checkbox");
 const form = document.getElementById("loginForm");
-const existingBtn = document.getElementByid("existing");
+const existingBtn = document.getElementById("existing");
 
 // check localstorage on page load
 window.onload = function () {
@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
 	if(checkbox.checked) {
 		localStorage.setItem("username", username);
 		localStorage.setItem("password", password);
-		existingBtn..style.display = "block";
+		existingBtn.style.display = "block";
 	} else {
 		localStorage.removeItem("username");
 		localStorage.removeItem("password");
@@ -43,7 +43,7 @@ form.addEventListener("submit", function (e) {
 });
 
 // existing user login
-existingBtn.addEventlistener("click", function() {
+existingBtn.addEventListener("click", function() {
 	const savedUser = localStorage.getItem("username");
 
 	if(savedUser) {
